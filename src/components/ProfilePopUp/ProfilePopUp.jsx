@@ -8,14 +8,17 @@ import parameters from '../../assets/parametres.png';
 const ProfilePopup = () => {
 
   
-  
+  const handleLogout = () =>{
+    console.log("in logout");
+    localStorage.removeItem('authToken');
+  }
   
   
   return (
     <div className='profile-popup'>
       <div className='profile-popup-container'>
         <div className= 'profile-popup-items'>
-          <div className='profile-popup-item'>
+          <div className='profile-popup-item' >
             <img src={profile} alt="" />
             <span>Profile</span>
             
@@ -27,7 +30,7 @@ const ProfilePopup = () => {
             
           </div>
           <div className='divider'></div> {/* Divider */}
-          <div className='profile-popup-item'>
+          <div className='profile-popup-item' onClick={handleLogout}>
             <img src={logout} alt="" />
             <span>Logout</span>
             
